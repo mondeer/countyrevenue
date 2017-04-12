@@ -1,16 +1,44 @@
-<form class="form-horizontal" action="{{url('/defaulter/create')}}" method="post">
-  {{csrf_field()}}
-  <div class="form-group">
-    <label for="motorbike_reg">Motor Reg</label>
-    <input type="text" name="motorbike_reg" value="">
+@extends('home')
+
+@section('content')
+  <div class="row">
+
+    <div class="panel panel-body">
+      <h1>Revenue Defaulters</h1>
+      <table class="table table-striped table-positive table-hover">
+
+                <thead>
+                <tr>
+                    <th><i class="fa fa-user"></i> Id.</th>
+                    <th><i class="fa fa-user"></i> Owner Name</th>
+                    <th><i class="fa fa-user"></i> Month</th>
+                    <th><i class="fa fa-user"></i> Motorbike Reg</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {{$now = Carbon\carbon::now()}}
+                    @foreach($motorevs as $motorev)
+
+                            <tr>
+                              <td>
+                                {{$motorev->id}}
+                              </td>
+                              <td>
+                                {{ $motorev->owner_name }}
+                              </td>
+                              <td>
+                                {{$now->month}}
+                              </td>
+                              <td>
+                                {{$motorev->motorbike_reg}}
+                              </td>
+                            </tr>
+
+                    @endforeach
+
+              </table>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label for="defaulter_amount">Defaulter </label>
-    <input type="text" name="defaulter_amount" value="">
-  </div>
-  <div class="form-group">
-      <div class="col-md-6 col-md-offset-4">
-          <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-  </div>
-</form>
+@endsection

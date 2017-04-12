@@ -3,7 +3,7 @@
 @section('content')
   <div class="row">
     <div class="panel panel-body">
-      <h1>Registered Motorcycles in the county</h1>
+      <h1>Monthly Audit</h1>
       <form class="form-horizontal" action="/revenue/filter" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -23,6 +23,6 @@
       </form>
 
     </div>
-
+    @yield('audit')
   </div>
 @endsection

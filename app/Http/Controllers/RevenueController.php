@@ -5,6 +5,7 @@ namespace revenue\Http\Controllers;
 use Illuminate\Http\Request;
 use revenue\Motorbike;
 use revenue\Revenue;
+use Carbon\carbon;
 
 class RevenueController extends Controller
 {
@@ -49,7 +50,6 @@ class RevenueController extends Controller
 
     public function shown() {
       $motorevs = Motorbike::with('revenues')->get();
-      // dd($revenues);
 
       return view('clerk.show')->with('motorevs', $motorevs);
     }
@@ -59,11 +59,21 @@ class RevenueController extends Controller
     }
 
     public function filter(Request $request) {
+      $months = Revenue::query();
       $month = $request->input('month');
 
-      $revenue = Revenue::where('month', $month)->get();
 
-      dd($revenue);
+
+      $revenues = $months->where('month', $month)->get();
+      
+      return view('clerk.monthly')->with('revenues', $revenues);
+    }
+
+    public function defaulter() {
+      $motorevs = Motorbike::with('revenues')->whereDoesntHave('revenues')->get();
+
+      // dd($motorevs);
+      return view('clerk.defaulter')->with('motorevs', $motorevs);
     }
 
     public function show($id)

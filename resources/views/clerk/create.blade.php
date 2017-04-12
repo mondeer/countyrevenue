@@ -8,9 +8,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Fill in Motocycle Detail</div>
-                @if(Session::has('message'))
-                  {{Session::get('message')}}
-                @endif
+
                 <div class="panel-body">
                   <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data"
                           action="/motor">
@@ -65,7 +63,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button data-toggle="modal" data-target="#myModal" type="submit" class="btn btn-primary">Create</button>
                             </div>
                         </div>
                     </form>
@@ -73,4 +71,22 @@
             </div>
         </div><!-- /col-lg-12 -->
     </div><!-- /row -->
+
+    <!-- Modal Success Popup -->
+    <div class="modal fade success-popup" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Hurray!</h4>
+          </div>
+          <div class="modal-body text-center">
+             <img src="http://osmhotels.com//assets/check-true.jpg">
+              <p class="lead">successfully submitted. Thank you,</p>
+              <a href="/motor/create" class="rd_more btn btn-default">Go to Home</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
 @endsection

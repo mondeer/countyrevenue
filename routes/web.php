@@ -29,8 +29,10 @@ Route::get('/revenue/filter', 'RevenueController@filte');
 
 Route::post('/revenue/filter', 'RevenueController@filter');
 
-Route::post('/defaulter/create', 'defaulterController@postCreate');
+Route::get('/revenue/defaulters', 'RevenueController@defaulter');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/motorbike/deregister', 'MotorsCtrl@deregister');

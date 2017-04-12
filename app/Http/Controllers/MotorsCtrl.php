@@ -5,24 +5,16 @@ namespace revenue\Http\Controllers;
 use Illuminate\Http\Request;
 use revenue\Motorbike;
 use revenue\Revenue;
+use Carbon\carbons;
 
 class MotorsCtrl extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
       return view('clerk.create');
@@ -48,6 +40,7 @@ class MotorsCtrl extends Controller
 
       return view('clerk.view')-> with('motors', $motors);
     }
+
     public function edit($id)
     {
       $motor = Motorbike::findOrFail($id);
@@ -72,6 +65,15 @@ class MotorsCtrl extends Controller
     {
       $motor = Motorbike::find($id);
       $motor->delete();
-      return redirect('/motor/view')->with('message','data hasbeen deleted!');
+      return redirect('/motorbike/deregister')->with('message','data hasbeen deleted!');
+    }
+
+    public function deregister() {
+      $motorbikes = Motorbike::all();
+      $now = Carbon::now();
+      return view('clerk.deregister')->with(array(
+        'motorbikes' => $motorbikes,
+        'now' => $now
+      ));
     }
 }

@@ -29,7 +29,7 @@
                         <ul class="nav child_menu">
                             <li><a href="/motor/create">Register a Motorcycle</a></li>
                             <li><a href="/motor/view">View Motorcycles</a></li>
-                            <li><a href="#">Deregister a Motorcycle</a></li>
+                            <li><a href="/motorbike/deregister">Deregister a Motorcycle</a></li>
 
                         </ul>
                     </li>
@@ -38,12 +38,12 @@
                         <ul class="nav child_menu">
                             <li><a href="/motor/view">Revenue Payment</a></li>
                             <li><a href="/revenue/show">Revenue Inquiry</a></li>
-                            <li><a href="#">Audit Monthly Revenue</a></li>
+                            <li><a href="/revenue/filter">Monthly Report</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="javascript:void(0)">
+                        <a href="/revenue/defaulters">
                             <i class="fa fa-dollar"></i>
                             Defaulter Register
                             <span class="label label-success pull-right">Flag</span>

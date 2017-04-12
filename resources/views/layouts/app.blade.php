@@ -43,7 +43,7 @@
                 <div class="collapse navbar-collapse navbar-1">
                     <ul class="site-navigation imond2  nav navbar-nav">
 
-                        
+
                         <li>
                             <a class="imond2" href="#">Appointment</a>
                         </li>
@@ -55,8 +55,8 @@
                             <a class="imond2" href="/eldoretcontact" class="btn btn">Contact Us</a>
                         </li>
                         @if (Auth::guest())
-                            <li><a class="btn-danger" href="{{ url('/login') }}">Login</a></li>
-                            <li><a class="btn-danger" href="{{ url('/register') }}">Register</a></li>
+                            <li><a class="btn-danger" href="{{ url('/') }}">Login</a></li>
+                            <li><a class="btn-danger" href="{{ route ('register') }}">Register</a></li>
 
                         @else
                             <li class="dropdown">
@@ -118,6 +118,18 @@
 
 <!-- Main container END -->
 </body>
+
+<script>
+    $(document).ready(function(){
+        $("#myModal").on("show.bs.modal", function(e) {
+            var id = $(e.relatedTarget).data('target-id');
+            $.get( "/controller/" + id, function( data ) {
+                $(".modal-body").html(data.html);
+            });
+
+        });
+    });
+</script>
 
 <!-- Google Analytics -->
 

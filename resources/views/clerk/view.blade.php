@@ -10,16 +10,6 @@
 
     <div class="panel panel-body">
       <h1>Registered Motorcycles in the county</h1>
-      @if($motors)
-        @if(isset($update))
-          <div class="alert alert-success">
-            Updated Succesfully
-          </div>
-        @else
-          <div class="alert alert-success">
-            Created Succesfully
-          </div>
-        @endif
       <table class="table table-striped table-positive table-hover">
 
                 <thead>
@@ -49,18 +39,14 @@
                             <td>
                               <a class="btn btn-primary" href="/revenue/create/{{$motor->id}}">Pay</a>
                             </td>
-                            <td><form class="delete" action="/motor/{{ $motor->id }}" method="post">
-                              <input type="hidden" name="_method" value="delete">
-                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                              <input type="submit" value="Delete">
-                            </form></td>
+
                         </tr>
                     @endforeach
 
-                    
+
                 </tbody>
               </table>
-          @endif
+
     </div>
 
   </div>
