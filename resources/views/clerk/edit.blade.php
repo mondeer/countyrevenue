@@ -1,4 +1,4 @@
-@extends('home')
+@extends('dashboard')
 
 @section('content')
 <h3><i class="fa fa-angle-right"></i> Update Motorcycle Detail</h3>

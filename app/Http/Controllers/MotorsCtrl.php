@@ -5,7 +5,7 @@ namespace revenue\Http\Controllers;
 use Illuminate\Http\Request;
 use revenue\Motorbike;
 use revenue\Revenue;
-use Carbon\carbons;
+use Carbon\carbon;
 
 class MotorsCtrl extends Controller
 {

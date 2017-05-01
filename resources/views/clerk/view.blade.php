@@ -1,13 +1,8 @@
-@extends('home')
+@extends('dashboard')
 
 @section('content')
   <div class="row">
-    <!-- @if(Session::has('flash_message'))
-    <div class="alert alert-success">
-        {{ Session::get('flash_message') }}
-    </div>
-@endif -->
-
+  
     <div class="panel panel-body">
       <h1>Registered Motorcycles in the county</h1>
       <table class="table table-striped table-positive table-hover">

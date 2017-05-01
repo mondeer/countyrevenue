@@ -1,4 +1,4 @@
-@extends('home')
+@extends('dashboard')
 
 @section('content')
   <div class="row">
@@ -41,7 +41,7 @@
                             </tr>
                         @endforeach
                     @endforeach
-                  
+
               </table>
     </div>
 
