@@ -22,12 +22,6 @@
     <link href="{{ asset ('assets/css/style-responsive.css')}}" rel="stylesheet">
 
     <script src="{{ asset ('assets/js/chart-master/Chart.js')}}"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -42,7 +36,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>EMC || Revenue System</b></a>
+            <a href="/home" class="logo"><b>EMC || Revenue System</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -78,7 +72,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="/home"><img src="{{ asset ('assets/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Welcome <br>{{Auth::user()->name}}</h5>
 
                   <li class="mt">
@@ -113,46 +107,6 @@
                           <li><a  href="/revenue/filter">Monthly Report</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
-                  </li>
 
               </ul>
               <!-- sidebar menu end-->
@@ -173,8 +127,8 @@
       <!--footer start-->
       <footer class="">
           <div class="text-center">
-              &copy;2017 Eer Designs
-              <a href="" class="go-top">
+              &copy;2017 Ever Designs
+              <a href="/" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
