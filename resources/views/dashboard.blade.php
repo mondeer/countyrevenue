@@ -107,6 +107,8 @@
                           <li><a  href="/revenue/filter">Monthly Report</a></li>
                       </ul>
                   </li>
+                  <li><a href="/revenue/defaulters">Revenue Defaulter</a></li>
+
 
               </ul>
               <!-- sidebar menu end-->

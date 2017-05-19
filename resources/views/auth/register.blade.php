@@ -33,6 +33,18 @@
               </div>
           </div>
 
+          <div class="form-group">
+            <label class="col-md-4 control-label">User Role</label>
+            <div class="col-md-6">
+            <select class="" name="role">
+              <option></option>
+              <option>Admin</option>
+              <option>Financial Officer</option>
+              <option>Clerk</option>
+            </select>
+          </div>
+          </div>
+
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
               <label for="password" class="col-md-4 control-label">Password</label>
 
